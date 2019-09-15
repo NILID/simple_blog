@@ -1,0 +1,9 @@
+.recent-posts.first
+  .container-fluid
+    .row.headline
+      .col-sm-12.heading
+        %h3 Последние посты
+    .row.posts-wrapper.col-3
+      = render(partial: 'notes/note_mini', collection: @last_notes) || content_tag(:div, t('notes.empty'), class:'col post-grid-wrapper text-center text-muted')
+      .clearfix
+

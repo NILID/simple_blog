@@ -1,0 +1,20 @@
+%article.single-page
+  .container-fluid
+    .row
+      .col-md-12
+        = bootstrap_form_for [@note, @container] do |f|
+          %header
+            %h2.text-center.heading
+              Editing container
+          - if @container.errors.any?
+            #error_explanation
+              %h2= "#{pluralize(@container.errors.count, "error")} prohibited this container from being saved:"
+              %ul
+                - @container.errors.full_messages.each do |message|
+                  %li= message
+
+          = f.text_area :content
+          = f.select :types_mask, Container::TYPES.collect { |p| [t(p), p] }
+
+          = f.form_group do
+            = f.submit 'Save', class: 'btn btn-default'

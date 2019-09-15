@@ -1,0 +1,21 @@
+/**********************************
+@include transition(background .5s)
+**********************************/
+@mixin transition($val...) {
+  -webkit-transition: $val;
+     -moz-transition: $val;
+      -ms-transition: $val;
+       -o-transition: $val;
+          transition: $val;
+}
+
+/**********************************
+@include transform(scale(1))
+**********************************/
+@mixin transform($val...) {
+    -webkit-scale: $val;
+       -moz-scale: $val;
+        -ms-scale: $val;
+         -o-scale: $val;
+            scale: $val;
+}

@@ -1,0 +1,64 @@
+ru:
+  actions:
+    del: Удалить
+    edit: Редактировать
+    sure: Вы уверены?
+    send: Отправить
+    create: Создать
+    add: Добавить
+  shared:
+    about_us: О нас
+    signout: Выйти
+    empty: Пусто
+    errors: Ошибки
+    admin: Админ
+    access_denied: Страницы не существует или нет доступа, или что-то поломалось, или...
+  containers:
+    add: Добавить блок
+    types:
+      text: текст
+      blockquote: цитата
+      image: изображение
+  slides:
+    add: Добавить слайд
+  contacts:
+    title: Контакты
+  users:
+    title: Авторы
+    my_profile: Мой профиль
+  notes:
+    title: Блог
+    works: Посты
+    title_by_tag: 'Посты в категории "%{tag}"'
+    new: Добавить пост
+    editing: Редактирование поста
+    creating: Создание поста
+    empty: На данный момент нет ни одной записи в блоге
+  recaptcha:
+    errors:
+      verification_failed: Ошибка проверки на спам. Вы робот?
+  activerecord:
+    models:
+      note: пост
+      container: блок
+      slide: слайд
+      user: пользователь
+    attributes:
+      note:
+        title: Заголовок
+        desc: Краткое описание
+        hide: Скрыть
+        tag_list: Теги (через запятую)
+      container:
+        content: Текст
+        types_mask: Тип
+      slide:
+        slide: слайд
+      user:
+        login: Логин
+        password: Пароль
+        password_confirmation: Повторите пароль
+        current_password: Текущий пароль
+        created_at: Зарегистрировался
+        last_sign_in_at: Последнее посещение
+        sign_in_count: Количество посещений

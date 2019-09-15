@@ -1,0 +1,21 @@
+= bootstrap_form_for [@note, container], remote: true, authenticity_token: true do |f|
+  .error-block
+
+  - case @type
+  - when 'blockquote'
+    = f.hidden_field :types_mask, value: 'blockquote'
+    = f.text_area :content
+  - when 'text'
+    = f.hidden_field :types_mask, value: 'text'
+    = f.text_area :content
+  - when 'image'
+    = f.select :types_mask, ['image', 'slideshow']
+    .field
+      .nested-fields
+        = f.fields_for :slides do |slide|
+          = render 'slide_fields', f: slide
+        .links
+          = link_to_add_association t('slides.add'), f, :slides
+
+  = f.form_group do
+    = f.submit class: 'btn btn-default'

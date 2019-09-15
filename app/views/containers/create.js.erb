@@ -1,0 +1,6 @@
+<% if @container.errors.any? %>
+  $('.error-block').html("<%= j render('main/error', item: @container) %>");
+<% else %>
+  $('#container_block').append("<%= j(render @container)%>");
+  $('#new_container').html('');
+<% end %>

@@ -1,0 +1,4 @@
+- if item.errors.any?
+  #error_explanation.block-mini.animated.fadeIn
+    - item.errors.full_messages.each do |msg|
+      .alert.alert-danger(role='danger')= msg

@@ -1,0 +1,16 @@
+.nested-fields.well
+  .pull-right= link_to_remove_association t('actions.del'), f
+  .field
+    = f.label :content
+    %br
+    = f.text_area :content, hide_label: true
+
+  .field
+    = f.select :types_mask, Container::TYPES.collect { |p| [t(p), p] }
+
+  #slides
+    = f.fields_for :slides do |slide|
+      = render 'slide_fields', f: slide
+    .links
+      = link_to_add_association t('slides.add'), f, :slides
+

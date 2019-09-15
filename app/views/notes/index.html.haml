@@ -1,0 +1,13 @@
+- set_meta_tags title: t('notes.works'),
+  description: t('notes.works'),
+  keywords: t('notes.works')
+
+.recent-posts.archive-posts
+  .container-fluid
+    .row.archive-heading
+      .col-sm-12
+        %h1= @title
+        - if current_user == @user
+          = link_to t('notes.new'), new_note_path, class: 'btn btn-primary'
+    .row.posts-wrapper.col-3
+      = render(partial: 'note_mini', collection: @notes) || content_tag(:div, t('notes.empty'), class:'col post-grid-wrapper text-center text-muted')

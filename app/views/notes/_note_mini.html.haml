@@ -1,0 +1,13 @@
+.col-md-4.col-sm-6.post-grid-wrapper
+  %article
+    = link_to note_mini, class: 'post-thumbnail' do
+      = lazy_image_tag note_mini.preview.url(:thumb)
+
+    .post-summary
+      %h2.post-title
+        = link_to note_mini.desc, note_mini
+      .post-meta
+        %span.post-categories
+          - note_mini.tag_list.each do |tag|
+            = link_to tag, root_path(by_tag: tag)
+            %span>= ', ' unless tag == note_mini.tag_list.last

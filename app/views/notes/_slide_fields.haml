@@ -1,0 +1,7 @@
+.row.nested-fields
+  .col-xs-4
+    .pull-right= link_to_remove_association t('actions.del'), f
+    - if f.object.slide.exists?
+      = image_tag f.object.slide(:thumb), width: '100px', class: 'thumbnail'
+    - else
+      = f.file_field :slide, hide_label: true

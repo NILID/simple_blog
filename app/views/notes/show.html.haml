@@ -1,0 +1,39 @@
+- set_meta_tags title: @note.title
+
+%article.single-post
+  .container-fluid
+    .row.meta
+      .col-md-12
+        - if can? :manage, @note
+          %ul.list-inline.meta.text-center
+            %li
+              = link_to t('actions.edit'), edit_note_path(@note)
+            %li
+              = link_to t('actions.del'), @note, method: :delete, data: { confirm: t('actions.sure') }
+
+        %h1.text-center.single-title
+          = @note.title
+        %ul.list-inline.meta.text-center
+          %li= link_to @note.user.login, @note.user
+  .container-fluid#containers{ data: { update_url: sort_containers_url } }
+    = render @containers
+
+    - if user_signed_in?
+      #container_block
+      .col-xs-12.text-center
+        .btn-group(role='group' aria-label='...')
+          - %i[text blockquote image].each do |type|
+            = link_to new_note_container_path(@note, type: type), remote: true, class: 'btn btn-lg btn-primary' do
+              - icon_name = case type
+              - when :text
+                - 'font'
+              - when :blockquote
+                - 'quote-right'
+              - when :image
+                - 'image'
+
+              %span.fa{ class: "fa-#{icon_name}" }
+              = t "containers.types.#{type}"
+
+      #container_form
+

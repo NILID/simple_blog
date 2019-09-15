@@ -1,0 +1,33 @@
+%header.site-header.logo-centered
+  %nav.navbar.navbar-default.primary-navigation
+    .container-fluid
+      .navbar-header
+        = link_to root_path, class: 'navbar-brand navbar-link' do
+          simple blog
+        %button.navbar-toggle.collapsed{ data: { target: '#navbar-wrapper', toggle: 'collapse' } }
+          %span.sr-only Toggle navigation
+          %span.first-icon-bar.icon-bar
+          %span.icon-bar
+          %span.last-icon-bar.icon-bar
+      #navbar-wrapper.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown
+            - if user_signed_in?
+              %a.dropdown-toggle{ "aria-expanded" => "false", "data-toggle" => "dropdown", href: '#' }
+                = current_user.login
+                %span.caret
+              %ul.dropdown-menu{ role: 'menu' }
+                %li= link_to t('users.my_profile'), current_user
+                %li= link_to t('shared.signout'), destroy_user_session_path, method: :delete
+            - else
+              %li= link_to t(:signup), new_user_registration_path
+              %li= link_to t(:signin), new_user_session_path
+
+          %li{ role: 'presentation'}
+            = link_to t('users.title'), users_path
+
+  - if flash[:notice] || flash[:error] || flash[:alert]
+    #flash.fadeInDown.animated
+      .alert.alert-info
+        = notice
+        = alert

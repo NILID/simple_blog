@@ -1,0 +1,10 @@
+- set_meta_tags title: t('users.title')
+
+%article.single-post
+  .container-fluid
+    .row.meta
+      .col-md-12
+        %table.table.table-striped
+          - @users.each do |user|
+            %tr
+              %td= link_to user.login, user

@@ -1,0 +1,15 @@
+ru:
+  devise:
+    logout: Выйти
+    login: Войти
+    register: Регистрация
+    to_register: Зарегистрироваться
+    no_confirmation: Не получили код подтверждения регистрации?
+    no_unlock: Не получили код разблокировки аккаунта?
+    forgot_password: Забыли пароль?
+    change_password: Смена пароля
+    change: Сменить
+    min_characters: минимум %{count} символов
+    send_reset_password: Получить инструкцию по сбросу пароля
+    send_confirmation: Получить инструкцию по подтверждению регистрации
+    send_unlock: Получить инструкцию по разблокировки аккаунта

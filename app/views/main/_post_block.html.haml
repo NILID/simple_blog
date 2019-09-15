@@ -1,0 +1,86 @@
+.recent-posts
+  .container-fluid
+    .row.headline
+      .col-sm-6.heading
+        %h3 Scrooser
+      .col-sm-6.see-all-posts
+        %a.see-all-posts{:href => "archive.html"} See All in Scrooser
+    .row.posts-wrapper.col-2
+      .col-md-6.col-sm-6.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-2.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            .post-meta
+              %span.post-categories
+                %a{:href => "archive.html"}> Style Refresh
+                ,
+                %a{:href => "archive.html"} Interiors
+            %h2.post-title
+              %a{:href => "single-post-with-sidebar.html"} Captivate Your Readers With an Interesting Blog Post Title
+      .col-md-6.col-sm-6.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-3.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            .post-meta
+              %span.post-categories
+                %a{:href => "archive.html"} Interiors
+            %h2.post-title
+              %a{:href => "single-post-without-sidebar.html"} Draw Readers in With an Alluring Blog Post Title Here
+      .clearfix
+.recent-posts
+  .container-fluid
+    .row.headline
+      .col-sm-6.heading
+        %h3 Travel
+      .col-sm-6.see-all-posts
+        %a.see-all-posts{:href => "archive.html"} See All in Travel
+    .row.posts-wrapper.col-2
+      .col-sm-12.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-1.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            %h2.post-title
+              %a{:href => "single-post-with-sidebar.html"} This Space is Perfect for Inspiring Your Readers with a Bold Title
+      .clearfix
+.recent-posts
+  .container-fluid
+    .row.headline
+      .col-sm-6.heading
+        %h3 Interior
+      .col-sm-6.see-all-posts
+        %a.see-all-posts{:href => "archive.html"} See All in Interior
+    .row.posts-wrapper.col-2
+      .col-sm-12.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-5.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            %h2.post-title
+              %a{:href => "single-post-without-sidebar.html"} Captivate Your Readers With an Interesting Blog Post Title
+      .clearfix
+.recent-posts.last
+  .container-fluid
+    .row.headline
+      .col-sm-6.heading
+        %h3 Food
+      .col-sm-6.see-all-posts
+        %a.see-all-posts{:href => "archive.html"} See All in Food
+    .row.posts-wrapper.col-3
+      .col-md-4.col-sm-6.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-8.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            %h2.post-title
+              %a{:href => "single-post-with-sidebar.html"} This Space is Perfect for Inspiring Your Readers with a Bold Title
+      .col-md-4.col-sm-6.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-10.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            %h2.post-title
+              %a{:href => "single-post-without-sidebar.html"} Write a Compelling Blog Post Title Here
+      .col-md-4.col-sm-12.post-grid-wrapper
+        %article
+          = link_to image_tag('home-2-img-9.jpg', class: 'img-responsive'), class: "post-thumbnail"
+          .post-summary
+            %h2.post-title
+              %a{:href => "single-post-without-sidebar.html"} Captivate Your Readers With an Interesting Blog Post Title
+      .clearfix

@@ -1,0 +1,15 @@
+%article.single-page
+  .container-fluid
+    .row
+      .col-md-12
+        = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          %header
+            %h2.heading.text-center Log in
+
+          = f.email_field :email, autofocus: true, autocomplete: 'email', hide_label: true, placeholder: User.human_attribute_name(:email)
+          = f.password_field :password, autocomplete: 'current-password', hide_label: true, placeholder: User.human_attribute_name(:password)
+          - if devise_mapping.rememberable?
+            = f.check_box :remember_me
+          = f.form_group do
+            = f.submit 'Log in', class: 'btn btn-default'
+        =# render 'users/shared/links'
