@@ -179,6 +179,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.1.4)
     phony (2.16.9)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -211,11 +212,16 @@ GEM
     rails-i18n (5.1.2)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_real_favicon (0.0.11)
       json (>= 1.7, < 3)
       rails (>= 3.1)
       rest-client (~> 2.0)
       rubyzip (~> 1)
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.7.1)
       actionpack (= 5.0.7.1)
       activesupport (= 5.0.7.1)
@@ -345,11 +351,13 @@ DEPENDENCIES
   meta-tags
   pagy
   paperclip
+  pg
   pry
   puma (~> 3.0)
   rails (~> 5.0.0)
   rails-controller-testing
   rails-i18n
+  rails_12factor
   rails_real_favicon
   record_tag_helper (~> 1.0)
   rspec-rails

@@ -63,7 +63,15 @@ gem 'jquery-ui-rails'
 
 gem 'record_tag_helper', '~> 1.0'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'pry'
