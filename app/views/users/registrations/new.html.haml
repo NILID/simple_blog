@@ -8,7 +8,12 @@
 
           = f.text_field :login, autofocus: true, autocomplete: 'login', hide_label: true, placeholder: User.human_attribute_name(:login)
           = f.email_field :email, autocomplete: 'email', hide_label: true, placeholder: User.human_attribute_name(:email)
-          = f.password_field :password, autocomplete: 'current-password', hide_label: true, placeholder: User.human_attribute_name(:password)
+
+          = f.password_field :password,
+            autocomplete: 'current-password',
+            hide_label: true,
+            placeholder: "#{User.human_attribute_name(:password)} #{ @minimum_password_length ? t('devise.min_characters', count: @minimum_password_length) : ''}"
+
           = f.password_field :password_confirmation, autocomplete: 'new-password', hide_label: true, placeholder: User.human_attribute_name(:password_confirmation)
           = f.form_group do
             = f.submit t('devise.to_register'), class: 'btn btn-default'
