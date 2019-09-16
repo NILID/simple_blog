@@ -1,4 +1,10 @@
 - set_meta_tags description: t('seo.main.desc'),
   keywords: t('seo.main.keys')
 
+- if user_signed_in?
+  .container
+    .row
+      .col
+        = link_to t('notes.new'), new_note_path, class: 'btn btn-primary'
+
 = render 'all_notes'
